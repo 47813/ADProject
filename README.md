@@ -24,7 +24,6 @@ pip install -r requirements.txt
 ```bash
 python manage.py makemigrations
 python manage.py migrate
-python manage.py loaddata dummy_data.json
 ```
 
 #### ✅ 개발 서버 실행
