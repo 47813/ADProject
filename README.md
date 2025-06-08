@@ -19,12 +19,31 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+
+#### ✅ PostgreSQL 설정
+
+macOS
+
+```bash
+brew install postgresql
+brew services start postgresql
+createdb postgresql
+```
+
+Windows
+```
+	1.	PostgreSQL 공식 사이트에서 설치
+	2.	pgAdmin 또는 CLI에서 postgresql 이름의 데이터베이스 생성
+```
+
+
 #### ✅ 마이그레이션 및 더미 데이터 삽입
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
+
 
 #### ✅ 개발 서버 실행
 
