@@ -1,0 +1,86 @@
+# === Python / Django ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.db
+*.DS_Store
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Django migration files
+**/migrations/
+**/migrations/*.pyc
+**/migrations/*.py
+
+# Django settings secrets
+.env
+*.secret
+*.pem
+
+# === React ===
+# node_modules
+frontend/node_modules/
+node_modules/
+
+# build artifacts
+frontend/build/
+frontend/dist/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Coverage
+htmlcov/
+coverage.xml
+*.cover
+.cache
+
+# Pytest
+.pytest_cache/
+
+# frontend dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+
+# frontend testing
+/frontend/coverage
+
+# frontend production
+/frontend/build
+
+# frontend misc
+/frontend/.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
