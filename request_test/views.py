@@ -3,8 +3,12 @@ from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
 from .serializers import UploadedFileSerializer, RequestInfoSerializer
+import logging
+
+logger = logging.getLogger('request_test')
 
 class RequestInfoAPIView(APIView):
+    logger.info("RequestInfoAPIView called")
     def get(self, request, format=None):
         data = {
             'method': request.method,
@@ -21,6 +25,7 @@ class RequestInfoAPIView(APIView):
 
         request.session['demo'] = '세션에서 저장한 값입니다.'
         serializer = RequestInfoSerializer(data)
+        logger.info(f"RequestInfoAPIView response: {serializer.data}")
         return Response(serializer.data)
 
     def post(self, request, format=None):
@@ -39,6 +44,7 @@ class RequestInfoAPIView(APIView):
 
         request.session['demo'] = '세션에서 저장한 값입니다.'
         serializer = RequestInfoSerializer(data)
+        logger.info(f"RequestInfoAPIView response: {serializer.data}")
         return Response(serializer.data)
 
 
@@ -49,5 +55,7 @@ class FileUploadAPIView(APIView):
         serializer = UploadedFileSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            logger.info(f"FileUploadAPIView response: {serializer.data}")
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        logger.warning(f"FileUploadAPIView response: {serializer.errors}")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
