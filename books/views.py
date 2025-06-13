@@ -9,7 +9,7 @@ logger = logging.getLogger('books')
 @api_view(['GET'])
 def get_all_books_view(request):
     logger.info("get_all_books_view called")
-    books = Book.objects.all()
+    books = Book.get_all_books()
     serializer = BookSerializer(books, many=True)
     logger.info(f"get_all_books_view response: {serializer.data}")
     return Response({'books': serializer.data})
