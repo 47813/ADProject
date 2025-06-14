@@ -49,7 +49,7 @@ function VideoSearchByKeyword() {
           <thead>
             <tr>
               <th>제목</th>
-              <th>주인공</th>
+              <th>감독</th>
             </tr>
           </thead>
           <tbody>

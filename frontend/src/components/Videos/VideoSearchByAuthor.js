@@ -29,7 +29,7 @@ function VideoSearchByAuthor() {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">주인공으로 비디오 검색</h2>
+      <h2 className="mb-4">감독으로 비디오 검색</h2>
       <form onSubmit={handleSubmit} className="input-group mb-3">
         <input
           type="text"
@@ -49,7 +49,7 @@ function VideoSearchByAuthor() {
           <thead>
             <tr>
               <th>제목</th>
-              <th>주인공</th>
+              <th>감독</th>
             </tr>
           </thead>
           <tbody>
