@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-dx=jg+(g9a9q(82+zmu0ga%ywvl@i8$7s-(f!)=(9j!_!ob(3^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
   "django.contrib.sessions",
   "django.contrib.messages",
   "django.contrib.staticfiles",
-  "books",
+  "videos",
   "request_test",
   "accounts",
   "myapp",
@@ -221,7 +221,7 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
-        'books': {
+        'videos': {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },

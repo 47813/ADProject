@@ -1,0 +1,12 @@
+<h1>영화 목록</h1>
+<ul>
+  {% for video in videos %}
+    <li>
+      <a href="{% url 'library:video_history' video.id %}">
+        {{ video.title }} by {{ video.author }}
+      </a>
+    </li>
+  {% empty %}
+    <li>등록된 비디오가 없습니다.</li>
+  {% endfor %}
+</ul>

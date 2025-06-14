@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, BorrowHistory
+from .models import Video, BorrowHistory
 
-admin.site.register(Book)
+admin.site.register(Video)
 admin.site.register(BorrowHistory)
