@@ -1,8 +1,6 @@
-
-
 # Webserver Fullstack Project
 
-이 프로젝트는 Django를 백엔드로, React를 프론트엔드로 구성한 전체 웹 애플리케이션입니다. 책 정보, 사용자 요청, 로그인 기능 등을 포함하고 있습니다.
+이 프로젝트는 Django를 백엔드로, React를 프론트엔드로 구성한 전체 웹 애플리케이션입니다. 비디오 정보, 사용자 요청, 로그인 기능 등을 포함하고 있습니다.
 
 ---
 
@@ -71,7 +69,7 @@ npm start
 
 ## 📦 주요 기능
 
-- 📚 도서 목록 및 검색 (저자, 키워드, 정렬)
+- 🎬 비디오 목록 및 검색 (저자, 키워드, 정렬)
 - 🔐 로그인 및 인증 (Django superuser 기반)
 - 📝 사용자 요청 정보 출력 (Request info viewer)
 - 📁 파일 업로드 기능
@@ -81,9 +79,9 @@ npm start
 
 ## 🔗 주요 경로 (프론트엔드)
 
-- `/books` - 전체 도서 목록
-- `/books/author` - 저자 검색
-- `/books/keyword` - 키워드 검색
+- `/videos` - 전체 비디오 목록
+- `/videos/author` - 저자 검색
+- `/videos/keyword` - 키워드 검색
 - `/login` - 로그인 페이지
 - `/request_info` - 사용자 요청 정보
 
