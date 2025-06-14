@@ -1,1 +1,1 @@
-from .book_service import get_all_books, get_book_by_id, get_borrow_history_for_book
+from .video_service import get_all_videos, get_video_by_id, get_borrow_history_for_video

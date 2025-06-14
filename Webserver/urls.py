@@ -26,7 +26,7 @@ urlpatterns = [
     path("", include("accounts.urls")),
     path("api/", include("myapp.urls")),
     path('library/', include("library.urls")),
-    path("", include("books.urls")),
+    path("", include("videos.urls")),
 ]
 
 if settings.DEBUG:

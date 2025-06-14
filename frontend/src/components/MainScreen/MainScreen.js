@@ -26,9 +26,9 @@ const MainScreen = () => {
           <Link to="/request_info" className="btn btn-sm btn-info mt-2">RequestInfo 컴포넌트 이동</Link>
         </li>
         <li className="list-group-item">
-          📖 <strong>전체 도서 목록</strong> – 도서 출력 및 필터 적용
+          🎬 <strong>전체 비디오 목록</strong> – 비디오 출력 및 필터 적용
           <br />
-          <Link to="/books" className="btn btn-sm btn-secondary mt-2">BookList 이동</Link>
+          <Link to="/videos" className="btn btn-sm btn-secondary mt-2">VideoList 이동</Link>
         </li>
         <li className="list-group-item">
           🌐 <strong>Hello API</strong> – 간단한 GET 테스트

@@ -4,6 +4,6 @@ from . import views
 app_name = 'library'
 
 urlpatterns = [
-  path('books/', views.book_list, name='book_list'),
-  path('books/<int:book_id>/history/', views.book_history, name='book_history')
+  path('videos/', views.video_list, name='video_list'),
+  path('videos/<int:video_id>/history/', views.video_history, name='video_history')
 ]

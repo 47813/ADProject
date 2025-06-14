@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-function BookSearchByAuthor() {
+function VideoSearchByKeyword() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [books, setBooks] = useState([]);
+  const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -16,12 +16,12 @@ function BookSearchByAuthor() {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/books/author/${encodeURIComponent(searchTerm.trim())}/`
+        `http://localhost:8000/videos/keyword/${encodeURIComponent(searchTerm.trim())}/`
       );
-      setBooks(response.data.books || []);
+      setVideos(response.data.videos || []);
     } catch (err) {
       setError('데이터를 불러오지 못했습니다.');
-      setBooks([]);
+      setVideos([]);
     } finally {
       setLoading(false);
     }
@@ -29,12 +29,12 @@ function BookSearchByAuthor() {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">저자명으로 책 검색</h2>
+      <h2 className="mb-4">제목 키워드로 비디오 검색</h2>
       <form onSubmit={handleSubmit} className="input-group mb-3">
         <input
           type="text"
           className="form-control"
-          placeholder="저자명을 입력하세요"
+          placeholder="제목 키워드를 입력하세요"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -44,19 +44,19 @@ function BookSearchByAuthor() {
       {loading && <p>불러오는 중...</p>}
       {error && <p className="text-danger">{error}</p>}
 
-      {books.length > 0 && (
+      {videos.length > 0 && (
         <table className="table table-striped mt-4">
           <thead>
             <tr>
               <th>제목</th>
-              <th>저자</th>
+              <th>감독</th>
             </tr>
           </thead>
           <tbody>
-            {books.map(book => (
-              <tr key={book.id}>
-                <td>{book.title}</td>
-                <td>{book.author}</td>
+            {videos.map(video => (
+              <tr key={video.id}>
+                <td>{video.title}</td>
+                <td>{video.author}</td>
               </tr>
             ))}
           </tbody>
@@ -66,4 +66,4 @@ function BookSearchByAuthor() {
   );
 }
 
-export default BookSearchByAuthor;
+export default VideoSearchByKeyword;

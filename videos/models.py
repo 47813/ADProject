@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import QuerySet
 
-class Book(models.Model):
+class Video(models.Model):
   title = models.CharField(max_length=200)
   author = models.CharField(max_length=100)
 
@@ -9,5 +9,5 @@ class Book(models.Model):
     return f"{self.title} - {self.author}"
   
   @classmethod
-  def get_all_books(cls) -> QuerySet['Book']:
+  def get_all_videos(cls) -> QuerySet['Video']:
     return cls.objects.all()

@@ -1,26 +1,26 @@
 # library/tests/test_services.py
 
 import pytest
-from library.models import Book
-from library.services.book_service import get_book_by_id
-from library.exceptions import BookNotFound
+from library.models import Video
+from library.services.video_service import get_video_by_id
+from library.exceptions import VideoNotFound
 
 @pytest.mark.django_db
-def test_get_book_by_id_success():
+def test_get_video_by_id_success():
     # Given
-    book = Book.objects.create(title='Test Book', author='Tester', isbn='1234567890123')  # 여기에 동작 코드를 작성하세요 (1점)
+    video = Video.objects.create(title='Test Video', author='Tester', isbn='1234567890123')
 
     # When
-    result = get_book_by_id(book.id)  # 여기에 동작 코드를 작성하세요 (1점)
+    result = get_video_by_id(video.id)
 
     # Then
-    assert result == book  # 여기에 동작 코드를 작성하세요 (1점)
-    assert result.title == 'Test Book'  # 여기에 동작 코드를 작성하세요 (1점)
+    assert result == video
+    assert result.title == 'Test Video'
 
 @pytest.mark.django_db
-def test_get_book_by_id_not_found():
+def test_get_video_by_id_not_found():
     # When & Then
-    with pytest.raises(BookNotFound) as exc_info:  # 여기에 동작 코드를 작성하세요 (1점)
-        get_book_by_id(9999)  # 여기에 동작 코드를 작성하세요 (1점)
+    with pytest.raises(VideoNotFound) as exc_info:
+        get_video_by_id(9999)
 
-    assert "ID 9999에 해당하는 책이 없습니다." in str(exc_info.value)
+    assert "ID 9999에 해당하는 비디오가 없습니다." in str(exc_info.value)

@@ -1,26 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponseNotFound
-from library.services import book_service
-from library.exceptions import BookNotFound, BookHasNoBorrowHistory
+from library.services import video_service
+from library.exceptions import VideoNotFound, VideoHasNoBorrowHistory
 import logging
 
 logger = logging.getLogger('library')
 
-def book_list(request):
-  logger.info("book_list called")
-  books = book_service.get_all_books()
-  return render(request, 'library/book_list.html', {'books':books})
+def video_list(request):
+  logger.info("video_list called")
+  videos = video_service.get_all_videos()
+  return render(request, 'library/video_list.html', {'videos': videos})
 
-def book_history(request, book_id):
-  logger.info(f"book_history called with book_id: {book_id}")
+def video_history(request, video_id):
+  logger.info(f"video_history called with video_id: {video_id}")
   try:
-    book = book_service.get_book_by_id(book_id)
-    histories = book_service.get_borrow_history_for_book(book)
-  except BookNotFound as e:
-    logger.warning(f"book_history response: {str(e)}")
+    video = video_service.get_video_by_id(video_id)
+    histories = video_service.get_borrow_history_for_video(video)
+  except VideoNotFound as e:
+    logger.warning(f"video_history response: {str(e)}")
     return HttpResponseNotFound(str(e))
-  except BookHasNoBorrowHistory as e:
-    logger.warning(f"book_history response: {str(e)}")
+  except VideoHasNoBorrowHistory as e:
+    logger.warning(f"video_history response: {str(e)}")
     return render(request, "library/no_history.html", {"message": str(e)})
-  logger.info(f"book_history response: {book}")
-  return render(request, 'library/book_history.html', {'book':book, 'histories':histories})
+  logger.info(f"video_history response: {video}")
+  return render(request, 'library/video_history.html', {'video': video, 'histories': histories})

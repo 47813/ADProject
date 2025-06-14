@@ -1,5 +1,6 @@
-class BookNotFound(Exception):
-  pass
+class VideoNotFound(Exception):
+    pass
 
-class BookHasNoBorrowHistory(Exception):
-  pass
+
+class VideoHasNoBorrowHistory(Exception):
+    pass
